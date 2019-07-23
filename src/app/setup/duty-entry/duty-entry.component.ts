@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTab } from '@angular/material';
 
 @Component({
   selector: 'duty-entry',
