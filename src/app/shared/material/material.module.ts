@@ -4,7 +4,6 @@ import {
   MatTabsModule
 } from '@angular/material';
 
-
 @NgModule({
   declarations: [],
   imports: [
