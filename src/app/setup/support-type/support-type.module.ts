@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { SupportTypeComponent } from './support-type.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [SupportTypeComponent],
+  exports: [SupportTypeComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class SupportTypeModule { }
