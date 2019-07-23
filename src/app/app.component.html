@@ -1,17 +1,15 @@
-<mat-tab-group animationDuration="0ms">
-  <mat-tab label="Support Plan">
-    <ng-template matTabContent>
-      <schedule></schedule>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Duty Entry Setup">
-    <ng-template matTabContent>
-      <duty-entry></duty-entry>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Support Type Setup">
-    <ng-template matTabContent>
-      <support-type></support-type>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+<nav>
+  <ul>
+    <li>
+      <a [routerLink]="['/schedule']" routerLinkActive="active">Support Plan</a>
+    </li>
+    <li>
+      <a [routerLink]="['/setup/duty-entry']" routerLinkActive="active">Duty Entry Setup</a>
+    </li>
+    <li>
+      <a [routerLink]="['/setup/support-type']" routerLinkActive="active">Support Type Setup</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

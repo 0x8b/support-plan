@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleModule } from './schedule/schedule.module';
-import { SetupModule } from './setup/setup.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { SetupModule } from './setup/setup.module';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    ScheduleModule,
-    SetupModule
+    ScheduleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
