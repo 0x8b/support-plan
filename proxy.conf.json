@@ -1,5 +1,5 @@
 {
-  "/": {
+  "/api/*": {
     "target": "http://172.29.77.90:8080",
     "secure": false,
     "changeOrigin": true
