@@ -13,9 +13,9 @@ export class IconService {
 
   init() {
     const icons = [
-      ['icon_add', 'ic_add_24px.svg'],
-      ['icon_clear', 'ic_clear_24px.svg'],
-      ['icon_done', 'ic_done_24px.svg']
+      ['add',    'round-add-24px.svg'],
+      ['cancel', 'round-cancel-24px.svg'],
+      ['check',  'round-check_circle-24px.svg']
     ];
 
     icons.forEach(([name, filename]) => {
