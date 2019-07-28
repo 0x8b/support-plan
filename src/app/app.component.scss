@@ -1,7 +1,12 @@
-$navbar-color: green;
+@import 'src/theme.scss';
+
+$primary: map-get($sp-app-theme, primary);
+$warn:    map-get($sp-app-theme, warn);
+
+$border-width: 3px;
 
 nav ul {
-  background: $navbar-color;
+  background-color: mat-color($primary);
   display: flex;
   justify-content: flex-start;
   list-style: none;
@@ -9,12 +14,12 @@ nav ul {
   padding: 0;
 
   a {
-    border-color: $navbar-color;
+    border-color: mat-color($primary);
     border-style: solid;
-    border-width: 3px 0;
+    border-width: $border-width 0;
     color: white;
     display: block;
-    padding: 13px 16px;
+    padding: (16px - $border-width) 16px;
     text-decoration: none;
 
     &.active {

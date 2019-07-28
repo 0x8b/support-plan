@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$sp-app-primary: mat-palette($mat-teal);
+$sp-app-accent:  mat-palette($mat-amber);
+$sp-app-warn:    mat-palette($mat-red);
+
+$sp-app-theme: mat-light-theme($sp-app-primary, $sp-app-accent, $sp-app-warn);
+
+@include angular-material-theme($sp-app-theme);
