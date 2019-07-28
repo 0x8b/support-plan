@@ -1,0 +1,30 @@
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.justify {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-divider {
+  margin: 16px 0;
+}
+
+.mat-stroked-button.addPhone {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.mat-icon-button {
+  width: auto;
+  margin-right: 16px;
+}

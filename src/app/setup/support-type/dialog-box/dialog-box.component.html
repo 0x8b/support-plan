@@ -1,0 +1,50 @@
+<h1 mat-dialog-title><strong>{{action | titlecase}}</strong></h1>
+
+<div mat-dialog-content>
+  <div *ngIf="action != 'delete'; else elseTemplate">
+    <section class="justify">
+      <mat-form-field>
+        <input placeholder="{{action | titlecase}} Code" #code [disabled]="local_data.isUsed" maxlength="15" matInput [(ngModel)]="local_data.code" required>
+        <mat-hint align="start"></mat-hint>
+        <mat-hint align="end">{{code.value.length}}/15</mat-hint>
+      </mat-form-field>
+      <mat-checkbox matInput color="primary" [(ngModel)]="local_data.charged">charged</mat-checkbox>
+      <mat-checkbox matInput color="primary" [(ngModel)]="local_data.mature">mature</mat-checkbox>
+    </section>
+    <mat-divider></mat-divider>
+    <h2 class="mat-h2">Add phone</h2>
+    <section class="justify">
+      <mat-form-field>
+        <input placeholder="label" #label matInput maxLength="50" [(ngModel)]="tmp_phone.label">
+        <mat-hint align="start"></mat-hint>
+        <mat-hint align="end">{{label.value.length}}/{{label.maxLength}}</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input placeholder="number" #number matInput maxLength="50" [(ngModel)]="tmp_phone.phone">
+        <mat-hint align="start"></mat-hint>
+        <mat-hint align="end">{{number.value.length}}/{{number.maxLength}}</mat-hint>
+      </mat-form-field>
+    </section>
+    <button class="addPhone" color="primary" mat-stroked-button (click)="addPhone()" [disabled]="tmp_phone.phone.length == 0 || tmp_phone.label.length == 0">Add Phone</button>
+    <mat-divider></mat-divider>
+    <h2 class="mat-h2">List of phones</h2>
+    <div *ngIf="local_data.phones.length > 0; else emptyListTemplate">
+      <div *ngFor="let phone of local_data.phones" class="row">
+        <button mat-icon-button color="warn" (click)="removePhone(phone)">
+          <mat-icon svgIcon="cancel"></mat-icon>
+        </button>
+        <span class="mat-body">{{phone.label}} ({{phone.phone}})</span>
+      </div>
+    </div>
+    <ng-template #emptyListTemplate>
+      <span class="mat-body">List of phones is empty.</span>
+    </ng-template>
+  </div>
+  <ng-template #elseTemplate>
+    <span class="mat-body">Sure to delete <b>{{local_data.code}}</b>?</span>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action | titlecase}}</button>
+  <button mat-button color="warn" (click)="closeDialog()">Cancel</button>
+</div>
