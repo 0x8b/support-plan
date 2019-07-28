@@ -1,0 +1,3 @@
+<mat-chip-list [multiple]="true">
+  <mat-chip *ngFor="let label of labels; index as i" [selected]="label.selected" (click)="click(i)" color="accent">{{label.label}}</mat-chip>
+</mat-chip-list>
