@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleModule } from './schedule/schedule.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PersistenceService } from './services/persistence.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SharedModule,
     ScheduleModule
   ],
-  providers: [],
+  providers: [PersistenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

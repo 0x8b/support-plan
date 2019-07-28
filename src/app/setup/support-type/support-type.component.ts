@@ -74,7 +74,7 @@ export class SupportTypeComponent implements OnInit {
 
   addRowData(row_obj) {
     this.service.add(row_obj).subscribe((data) => {
-      this.dataSource = data;
+      this.dataSource = <SupportTypeInterface>data;
       this.openSnackBar('Added', '');
       this.getData();
     }, (error) => {
@@ -88,7 +88,7 @@ export class SupportTypeComponent implements OnInit {
 
   updateRowData(row_obj) {
     this.service.update(row_obj).subscribe((data) => {
-      this.dataSource = data;
+      this.dataSource = <SupportTypeInterface>data;
       console.log(data);
       this.openSnackBar('Updated', '');
       this.getData();
@@ -97,7 +97,7 @@ export class SupportTypeComponent implements OnInit {
 
   deleteRowData(row_obj) {
     this.service.delete(row_obj.id).subscribe((data) => {
-      this.dataSource = data;
+      this.dataSource = <SupportTypeInterface>data;
       this.openSnackBar('Deleted', '');
     });
   }

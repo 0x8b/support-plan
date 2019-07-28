@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class PersistanceService {
+export class PersistenceService {
   constructor() {}
 
   set(key: string, data: any): void {
