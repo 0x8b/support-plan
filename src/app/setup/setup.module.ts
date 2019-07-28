@@ -8,6 +8,11 @@ import { IconService } from '../services/icon.service';
 
 import { DutyEntryComponent } from './duty-entry/duty-entry.component';
 import { SupportTypeComponent } from './support-type/support-type.component';
+import { DialogBoxComponent } from './support-type/dialog-box/dialog-box.component';
+
+import { FormsModule } from '@angular/forms';
+import { SupportTypeService } from '../services/support-type.service';
+
 
 const routes: Routes = [
   {
@@ -25,11 +30,14 @@ const routes: Routes = [
     CommonModule,
     DutyEntryModule,
     SupportTypeModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   exports: [
     DutyEntryModule,
     SupportTypeModule
-  ]
+  ],
+  providers: [SupportTypeService],
+  entryComponents: [DialogBoxComponent]
 })
 export class SetupModule { }

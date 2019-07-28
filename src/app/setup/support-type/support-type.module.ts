@@ -15,7 +15,6 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     CommonModule,
     SharedModule,
     FormsModule
-  ],
-  entryComponents: [DialogBoxComponent]
+  ]
 })
 export class SupportTypeModule { }
